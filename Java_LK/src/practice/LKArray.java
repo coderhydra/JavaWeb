@@ -56,7 +56,7 @@ public class LKArray {
 		 */
 		numOfDays += day;
 		
-		// 실수 계산값을 7로 나눈 나머지 구하기. 요일 배열의 [방번호].
+		// 실수 계산값을 7로 나눈 나머지 구하기. 요일 배열의 [방번호]
 		int dayOfWeek = numOfDays % 7;
 		
 		// 나머지 값에 따라서 적당한 요일 출력
