@@ -1,0 +1,145 @@
+submit onsubmit action method jsp
+ajax
+<a href="/___/___?___=${___.____}">_____</a>
+<a href="javascript:___();">______</a>
+
+@controller
+
+
+@requestmapping(/)
+@getmapping(/)
+@postmapping(/)
+@ReqsponseBody
+public String login(UserVo vo)// jsp에서 tag와 vo의 변수 매칭  
+@requestparam("jsp tag") 변수 , Model m 
+HttpSession session
+{
+session.setAttribute("uid", vo.getUid());
+
+m.addAttribute("jsp tag",______)
+String.format("{\"___\":%b }", boolean);
+
+
+@autowired
+@conmonent___vo
+@service___svc
+
+
+
+
+
+사원정보 CRUD
+ = 로그인하지 않은 이용자는 로그인 폼으로...
+Object uid = session.getAttribute("uid")
+if(uid == null) {
+
+}
+
+사원정보 입력기능을 요청할때 
+로그인 검사를 해여 로그인하지 않았다면 로그인 폼을 보여준다.
+서비스에서 메소드 만들때 파라미터 안에 HTTP안쓸려면
+생성자 만들고 컨트롤러에서 오토와이어드
+
+
+컨트롤러에서 boolean값을 포워딩하면 var___ = eval('true'); 변환!
+
+Q.사원접보 입력 폼이 화면에 보일때 그 페이지에 [로그아웃] 링크 추가
+[로그아웃]을 클릭하면 '로그아웃 성공'메시지 표시
+
+
+@PathVariable("변수이름");
+@GetMapping("/emp/delete/5");
+--->
+@GetMapping("/emp/delete?no=5"); QueryStr 
+--->requestgetParameter()
+--->RequestParam
+
+Cart MVC 구현
+ - 한 이용자가 여러 페이지에서 구입한 상품은 한 장소에 보관 및 관리
+ - session.setAttribute("p1",product);
+   Cart cart = new Cart();
+ - session.setAttribute("cart", cart); 
+
+
+ - Cart cart= (Cart)session.getAttribute("cart");
+   Gppds book = new Book("제목", 가격, 출판사, 출판일);
+   cart.add(book);
+   구입총액 : cart.total();
+
+/shop/book/1 : 책 5권 정보를 보여준다.(books.data)
+	- 항 권에 대한 상세 페이지로 이동
+	- 제목, 출판사, 가격, 출판일
+	- 장바구니에 담기 ? 서버에서는 도서 정보를 이용자의 장바구니에 저장
+	- Book 클래스
+
+//22.01.17
+화면 갱신 없이 내용 바꿀때 ajax
+수량변경시 자바수니 보기 페이지에 나타나는 총계 xxx 으ㅏㄴ도 변경되도록 해보세요...
+
+//22.01.21
+
+JdbcTeamplate
+ibatis -> Mybatis
+
+ORM : Object Relational Mapping
+FrameWork
+
+user 테이블 을 대상으로하는 mybatis CRUD
+DB를 다룬다
+1. 설정 	- pom.xml 설정(dependcy 추가) 
+	- application.propertie 에서 mysql(접속정보) 설정 필요
+	- mysql JDBC Connector (dependcy 추가)
+2. Mapper 인터페이스 작성 객체와 sql 연결
+	mybatis 프레임워크가 Mapper 인터페이스를 구현한 클래스 생성(선언만하고 구현클레스를 만들필요가없다.)
+3. @Aurowired를 사용하여 구현한 클래스의 객체 참조를 사용함
+ 
+mybatis 는 ? 를 이름#{___} 으로 대신하다. get___ set____ 필요
+@Insert sql에 조낸다는 어노테이션
+
+**UserMapper
+**UserMapperDAO
+**UserMBSVC
+**UaweMIBController
+
+//220124
+
+CRUD 포함 
+ - 개시판
+ 
+
+MyBatis
+ - Interface
+@Insert ("INSERT~")
+Public int addMemver (Memb m);
+
+개발자가 선언한 인터페이스를 mybatis 가 구혀낳고 그 객테를 개발자가 사용함
+레코드 (Row)와 객테의 맵핑을 Mybatis가 구현한다.
+
+인터페이스와 SQL문장을 분리
+ - *.java, *.xml 
+ - 동일 패키지에 생성
+ - 파일명이 동일해야 함(UserMapper.java, usermapper.xml)
+ 	-<select id = getUserByID(메소드 이름)
+	-resultType = "com.example,demo.vo.User" (정수 리턴은 생략)(리스트 형식이라면 자동으로 리스트 생성)
+	- parameterType="Integer" (파라미터가 없으면 생략)
+	- SELECT num, name, phone, email FROM user WHERE num = ${num}
+	</select>
+ 
+/*Dynamic SQL*/
+PK(num)를 모르고 사용자 정보를 검샐하는 경우
+ - WHERE name= #{name}
+ - WHERE phone= #{phone}
+ - WHERE email = #{email}
+ - WHERE name = #{name} AND phone = #{phone}
+ - WHERE name = #{name} AND email = #{email}
+ - WHERE phone = #{phone} AND email = #{email}
+ - WHERE name = #{name} AND phone = #{phone} AND email = #{email}
+
+ === findWithoutID
+<where> 안에 로직이 하나라고 돌아가면 where 추가 없으면 where 추가안함 (동적 SQL)
+AND 는 단일 선택시 없어짐~! 이 if 문만 실행 된다면 and가 탈락됨
+
+다이나믹 sql :
+
+
+
