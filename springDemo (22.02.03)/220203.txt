@@ -1,0 +1,31 @@
+프로젝트 방향?
+
+1. 개발환경, 운용환경
+ - 개발환경: Win, Eclipse, Spring, Java, Tomcat
+ - 운용환경: Linux, Java(8), Tomcat, MySQL
+ - Oracle Cloud : 가상머신(VM), Linux, 100GB, 평생
+ - 50g 씩 2개 운용이 가능하다.
+
+
+//220203
+
+Web Socket
+2대의 컴퓨터가 통신하기 위해서
+
+ - tcp/ip ______ Http (연결과 끊김을 반복) [편지/전화]
+ - ^^^ 접속지향적 신뢰성(끊기지 않는다.)
+  ex) 서버에 접속한 두사람이 채팅
+  ex) 서버에 접속한 모든 이용자가 채팅하는 사이트
+  ex) 서버에 접속한 이용자끼리 상호작용하는 게임
+
+ - 클라이언트 : Javascript, 서버: Java
+
+
+1.Ws 디렉토리 웹소켓 구성 파일 
+2.디펜던시
+3.서버엔드포인트 만들기! ws websoket
+4. 스프링 데모 어플리케이션 에 @bean 메소드 넣어주기
+5. jsp 페이지 채팅할수있는 javascript 추후 jquery 정리
+6. 컨트롤러
+
+CSS, Oracle Clout(회원가입, 계좌이름, 아이디, 암호)
