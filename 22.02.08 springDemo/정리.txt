@@ -1,0 +1,50 @@
+//220208
+//2교시
+View Template Engine
+ - Jsp
+ - Velocity
+ - Titles
+ - Thymeleaf
+	......
+
+타임리프 설정
+pom.xml (dependency)
+application.properties
+
+웹페이지의 동일 부분을 고정 시켜서 인젝션할수 있다????
+템플릿화?......
+El비슷한 형식사용
+타임리프는 jstl을 더 축약할수 있다.
+
+타임리프로 내서재 표현해보자
+html namespace 선언~!
+xmlns = ~~~
+
+th~~~ tymeleaf tag
+injection
+      <th:block th:include="@{/fragments/header}"></th:block> 
+	th:block ~ injection
+
+Loop (${list} -> model.addattribute("list",????);
+text = 속성.
+         <div th:each="item : ${list}" th:text="${item}"></div>
+
+딥테그 안에 아이디를 동적으로 생성하기
+
+<div th: each="otem , status: ${list}" th:text="${item}"
+th:id="|id_${status,index}|"></div>
+
+
+jsp 에서 include
+
+JSP 에서 조각 파일 포함하는 방법
+
+포함되는 파일이 함께 컴파일 하는 방식
+<%@ include file="/WEB-INF/jsp/sample.jsp"%>
+
+실행시간에 해당 파일 붙여넣기 되는 방식
+<jsp: include page="WEB-INF/jsp/header.jsp"/>
+
+<jsp: include page="WEB-INF/jsp/header.jsp"/>
+<jsp: param name="num" value="3"/>
+</jsp:include>
